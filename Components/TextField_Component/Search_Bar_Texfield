@@ -1,0 +1,596 @@
+@Composable
+fun SearchBarUI() {
+    data class SearchComponent(
+        val title: String,
+        val subtitle: String,
+        val icon: ImageVector
+    )
+    val allComponents = listOf(
+
+        SearchComponent(
+            "Login UI",
+            "Material Login Screen",
+            Icons.Default.Lock
+        ),
+
+        SearchComponent(
+            "OTP Verification",
+            "Authentication Screen",
+            Icons.Default.Password
+        ),
+
+        SearchComponent(
+            "Dashboard UI",
+            "Analytics Dashboard",
+            Icons.Default.Dashboard
+        ),
+
+        SearchComponent(
+            "Bottom Navigation",
+            "Material Navigation Bar",
+            Icons.Default.SpaceDashboard
+        ),
+
+        SearchComponent(
+            "AI Prompt Builder",
+            "Prompt Generator UI",
+            Icons.Default.AutoAwesome
+        ),
+
+        SearchComponent(
+            "Animated Buttons",
+            "Material Button Animations",
+            Icons.Default.SmartButton
+        ),
+
+        SearchComponent(
+            "Glassmorphism Card",
+            "Premium Card Design",
+            Icons.Default.CreditCard
+        ),
+
+        SearchComponent(
+            "Search Bar UI",
+            "Material Search Component",
+            Icons.Default.Search
+        )
+
+    )
+    var search by remember {
+        mutableStateOf("")
+    }
+
+    val filteredItems = remember(search) {
+
+        allComponents.filter {
+
+            it.title.contains(
+                search,
+                ignoreCase = true
+            )
+
+        }
+
+    }
+    var showResults by remember {
+        mutableStateOf(false)
+    }
+
+    var itemSelected by remember {
+        mutableStateOf(false)
+    }
+    val focusManager = LocalFocusManager.current
+    val keyboardController = LocalSoftwareKeyboardController.current
+    var isLoading by remember {
+        mutableStateOf(false)
+    }
+    val scope = rememberCoroutineScope()
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(
+                Brush.verticalGradient(
+                    listOf(
+                        Color(0xFF0F172A),
+                        Color(0xFF1E293B),
+                        Color(0xFF334155)
+                    )
+                )
+            ),
+        contentAlignment = Alignment.Center
+    ) {
+
+        Card(
+            modifier = Modifier.fillMaxWidth(.92f),
+            shape = RoundedCornerShape(30.dp),
+            colors = CardDefaults.cardColors(
+                containerColor = Color(0xFF1E293B)
+            )
+        ) {
+            Spacer(Modifier.height(28.dp))
+
+            Column(
+                modifier = Modifier.padding(18.dp)
+            ) {
+
+//================ Header ==================
+
+                Row(
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+
+                    Icon(
+                        imageVector = Icons.Default.Search,
+                        contentDescription = null,
+                        tint = Color(0xFF06B6D4),
+                        modifier = Modifier.size(48.dp)
+                    )
+
+                    Spacer(Modifier.width(16.dp))
+
+                    Column {
+
+                        Text(
+                            text = "Search Bar UI",
+                            color = Color.White,
+                            fontSize = 28.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+
+                        Text(
+                            text = "Material TextField Components",
+                            color = Color.LightGray,
+                            fontSize = 15.sp
+                        )
+
+                    }
+
+                }
+
+                //================ Search TextField ==================
+
+                Spacer(Modifier.height(28.dp))
+
+                Text(
+                    text = "Search TextField",
+                    color = Color(0xFF06B6D4),
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 18.sp
+                )
+
+                Spacer(Modifier.height(10.dp))
+
+                OutlinedTextField(
+
+                    value = search,
+
+                    onValueChange = {
+
+                            search = it
+                            itemSelected = false
+
+                            showResults = false
+
+
+                          },
+
+                    modifier = Modifier.fillMaxWidth(),
+
+                    placeholder = {
+                        Text("Search UI Components...",
+                            fontSize = 15.sp
+                            )
+                    },
+
+                    leadingIcon = {
+
+                        Icon(
+                            Icons.Default.Search,
+                            contentDescription = null,
+                            tint = Color(0xFF06B6D4)
+                        )
+
+                    },
+
+                    trailingIcon = {
+
+
+                            when {
+
+                                isLoading -> {
+
+                                    CircularProgressIndicator(
+                                        modifier = Modifier.size(22.dp),
+                                        strokeWidth = 2.dp,
+                                        color = Color(0xFF06B6D4)
+                                    )
+
+                                }
+
+                                search.isNotEmpty() -> {
+
+                                    IconButton(
+                                        onClick = {
+
+                                            search = ""
+                                            showResults = false
+                                            itemSelected = false
+
+                                        }
+                                    ) {
+
+                                        Icon(
+                                            Icons.Default.Close,
+                                            contentDescription = null,
+                                            tint = Color.White
+                                        )
+
+                                    }
+
+                                }
+
+
+
+
+                        }
+
+                    },
+
+                    supportingText = {
+
+                        Text(
+                            "Search Jetpack Compose components",
+                            color = Color(0xFF06B6D4)
+                        )
+
+                    },
+
+                    singleLine = true,
+
+                    shape = RoundedCornerShape(24.dp),
+
+                    colors = OutlinedTextFieldDefaults.colors(
+
+                        focusedBorderColor = Color(0xFF06B6D4),
+
+                        unfocusedBorderColor = Color.Gray,
+
+                        focusedLabelColor = Color.White,
+
+                        focusedTextColor = Color.White,
+
+                        unfocusedTextColor = Color.White,
+
+                        focusedPlaceholderColor = Color.LightGray,
+
+                        unfocusedPlaceholderColor = Color.Gray,
+
+                        cursorColor = Color(0xFF06B6D4)
+
+                    )
+
+                )
+
+                Spacer(Modifier.height(20.dp))
+
+
+//================ Recent Searches ==================
+if (search.isBlank()) {
+
+                Text(
+                    text = "Start typing to search...",
+                    color = Color.LightGray
+                )
+
+            }
+
+            else if (isLoading) {
+
+
+            }
+
+            else if (showResults) {
+
+                if (filteredItems.isEmpty()) {
+
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+
+                        Icon(
+                            Icons.Default.SearchOff,
+                            contentDescription = null,
+                            tint = Color.Gray,
+                            modifier = Modifier.size(60.dp)
+                        )
+
+                        Spacer(Modifier.height(10.dp))
+
+                        Text(
+                            text = "No Components Found",
+                            color = Color.White,
+                            fontWeight = FontWeight.Bold
+                        )
+
+                        Text(
+                            text = "Try another keyword.",
+                            color = Color.LightGray
+                        )
+
+                    }
+
+                } else {
+
+                    Text(
+                        text = "Search Results",
+                        color = Color(0xFF22C55E),
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+
+                    Spacer(Modifier.height(10.dp))
+
+                    Text(
+                        text = "Found ${filteredItems.size} component(s)",
+                        color = Color.LightGray
+                    )
+
+                    Spacer(Modifier.height(14.dp))
+
+                    Column(
+                        verticalArrangement = Arrangement.spacedBy(10.dp)
+                    ) {
+
+
+                            filteredItems.forEach { item ->
+
+                                Card(
+
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .clickable {
+
+                                            search = item.title
+
+                                            itemSelected = true
+
+                                            keyboardController?.hide()
+
+                                            focusManager.clearFocus()
+
+                                        },
+
+                                    shape = RoundedCornerShape(18.dp),
+
+                                    colors = CardDefaults.cardColors(
+                                        containerColor = Color(0xFF263244)
+                                    )
+
+                                ) {
+
+                                    Row(
+
+                                        modifier = Modifier
+                                            .fillMaxWidth()
+                                            .padding(16.dp),
+
+                                        verticalAlignment = Alignment.CenterVertically
+
+                                    ) {
+
+                                        Icon(
+
+                                            imageVector = item.icon,
+
+                                            contentDescription = null,
+
+                                            tint = Color(0xFF06B6D4),
+
+                                            modifier = Modifier.size(28.dp)
+
+                                        )
+
+                                        Spacer(Modifier.width(14.dp))
+
+                                        Column(
+                                            modifier = Modifier.weight(1f)
+                                        ) {
+
+                                            Text(
+
+                                                text = item.title,
+
+                                                color = Color.White,
+
+                                                fontWeight = FontWeight.Bold
+
+                                            )
+
+                                            Text(
+
+                                                text = item.subtitle,
+
+                                                color = Color.LightGray,
+
+                                                fontSize = 13.sp
+
+                                            )
+
+                                        }
+
+                                        Icon(
+
+                                            Icons.Default.KeyboardArrowRight,
+
+                                            contentDescription = null,
+
+                                            tint = Color.Gray
+
+                                        )
+
+                                    }
+
+                                }
+
+                            }
+                        }
+                    }
+                }}
+            //================ Trending Searches ==================
+
+            Spacer(Modifier.height(24.dp))
+
+            Text(
+                modifier = Modifier.padding(start = 18.dp, end = 18.dp, bottom = 10.dp),
+                text = "Trending Searches",
+                color = Color(0xFFF59E0B),
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Bold
+            )
+
+            Spacer(Modifier.height(14.dp))
+
+            FlowRow(
+            modifier = Modifier.padding(start = 18.dp, end = 18.dp),
+                horizontalArrangement = Arrangement.spacedBy(10.dp),
+                verticalArrangement = Arrangement.spacedBy(10.dp)
+            ) {
+
+                val trending = listOf(
+                    "AI UI",
+                    "Material 3",
+                    "Compose",
+                    "Dashboard",
+                    "Login UI",
+                    "Animations",
+                    "Cards",
+                    "Buttons"
+                )
+
+                trending.forEach { item ->
+
+                    SuggestionChip(
+
+                        onClick = {
+                            search = item
+                            itemSelected = false
+                            showResults = false
+
+                        },
+
+                        label = {
+
+                            Text(item)
+
+                        },
+
+                        icon = {
+
+                            Icon(
+                                Icons.Default.LocalFireDepartment,
+                                contentDescription = null,
+                                modifier = Modifier.size(18.dp)
+                            )
+
+                        },
+
+                        colors = SuggestionChipDefaults.suggestionChipColors(
+
+                            containerColor = Color(0xFF334155),
+
+                            labelColor = Color.White,
+
+                            iconContentColor = Color(0xFFF59E0B)
+
+                        ),
+
+                        border = SuggestionChipDefaults.suggestionChipBorder(
+
+                            enabled = true,
+
+                            borderColor = Color(0xFFF59E0B)
+
+                        )
+
+                    )
+
+                }
+
+            }
+
+            Spacer(Modifier.height(24.dp))
+            Button(
+
+                onClick = {
+
+                    if (search.isNotBlank()) {
+
+                        scope.launch {
+
+                            isLoading = true
+
+                            showResults = false
+
+                            delay(2000)
+
+                            isLoading = false
+
+                            showResults = true
+                        }
+
+                    }
+
+                },
+
+                enabled = !isLoading,
+
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(56.dp).padding(start = 18.dp, end = 18.dp, bottom = 14.dp),
+
+                shape = RoundedCornerShape(18.dp),
+
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color(0xFF06B6D4)
+                )
+
+            ) {
+
+                if (isLoading) {
+
+                    CircularProgressIndicator(
+                        modifier = Modifier.size(22.dp),
+                        strokeWidth = 2.dp,
+                        color = Color.White
+                    )
+
+                    Spacer(Modifier.width(12.dp))
+
+                    Text(
+                        "Searching...",
+                        fontWeight = FontWeight.Bold
+                    )
+
+                } else {
+
+                    Icon(
+                        Icons.Default.Search,
+                        contentDescription = null
+                    )
+
+                    Spacer(Modifier.width(8.dp))
+
+                    Text(
+                        "Search",
+                        fontWeight = FontWeight.Bold
+                    )
+
+                }
+
+            }
+        }
+
+    }
+
+}
