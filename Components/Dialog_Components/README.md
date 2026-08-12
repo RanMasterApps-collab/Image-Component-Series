@@ -10,11 +10,11 @@ Modern Dialog UI components built with Kotlin, Jetpack Compose, and Material 3.
 
 ### Error Dialog
 
-![Error Dialog](./images/error-dialog.png)
+![Error Dialog](./images/error_dialog.png)
 
 ### Success Dialog
 
-![Success Dialog](./images/success-dialog.png)
+![Success Dialog](./images/success_dialog.png)
 
 ## Components
 
