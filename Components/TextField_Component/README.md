@@ -41,7 +41,7 @@ A clean and reusable TextField designed for login screens.
 A modern Material TextField component designed with Jetpack Compose and Material 3.
 
 <p align="center">
-  <img src="./images/material-textfield.png" width="300">
+  <img src="./images/material_textfield.png" width="300">
 </p>
 
 **Source Code:**  
@@ -54,7 +54,7 @@ A modern Material TextField component designed with Jetpack Compose and Material
 A modern OTP verification interface for entering verification codes.
 
 <p align="center">
-  <img src="./images/otp-verification.png" width="300">
+  <img src="./images/otp_verification.png" width="300">
 </p>
 
 **Source Code:**  
@@ -67,7 +67,7 @@ A modern OTP verification interface for entering verification codes.
 A reusable search TextField for Android applications.
 
 <p align="center">
-  <img src="./images/search-textfield.png" width="300">
+  <img src="./images/search_textfield.png" width="300">
 </p>
 
 **Source Code:**  
