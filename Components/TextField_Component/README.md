@@ -28,7 +28,7 @@ A modern animated search interface with recent searches, searching state, and se
 A clean and reusable TextField designed for login screens.
 
 <p align="center">
-  <img src="./images/login-textfield.png" width="300">
+  <img src="./images/login_textfield.png" width="300">
 </p>
 
 **Source Code:**  
@@ -110,10 +110,10 @@ A reusable search TextField for Android applications.
 ## Components Preview
 
 <p align="center">
-  <img src="./images/login-textfield.png" width="220">
-  <img src="./images/material-textfield.png" width="220">
-  <img src="./images/otp-verification.png" width="220">
-  <img src="./images/search-textfield.png" width="220">
+  <img src="./images/login_textfield.png" width="220">
+  <img src="./images/material_textfield.png" width="220">
+  <img src="./images/otp_verification.png" width="220">
+  <img src="./images/search_textfield.png" width="220">
 </p>
 
 ---
@@ -124,7 +124,8 @@ Step-by-step tutorials for these Jetpack Compose components are available on my 
 
 The tutorials explain how to build each UI component from scratch using Kotlin and Jetpack Compose.
 
----
+🎥 **[Watch the Complete Jetpack Compose Component Series](https://www.youtube.com/playlist?list=PLUAbH6SEobOg)**
+
 
 ## License
 
