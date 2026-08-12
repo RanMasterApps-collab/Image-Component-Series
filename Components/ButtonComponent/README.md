@@ -113,7 +113,9 @@ An interactive swipe-to-complete button for actions that require user confirmati
 ## Preview
 
 <p align="center">
-  <img src="./images/gradient_button.png" width="240">
+  <p align="center">
+  <img src="./images/gradient_button.png" width="280">
+</p>
   <img src="./images/material_button.png" width="180">
   <img src="./images/loading_button_load.png" width="180">
   <img src="./images/social_button.png" width="180">
