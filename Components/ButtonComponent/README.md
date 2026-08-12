@@ -50,10 +50,11 @@ A clean Material-style button component for Jetpack Compose applications.
 
 ### 4. Social Action Button
 
-A reusable social action button designed for modern social and profile interfaces.
+A reusable social action button with different visual styles and color variations.
 
 <p align="center">
-  <img src="./images/social_button.png" width="300">
+  <img src="./images/social_button.png" width="280">
+  <img src="./images/social_button_color.png" width="280">
 </p>
 
 **Source Code:**  
@@ -61,20 +62,7 @@ A reusable social action button designed for modern social and profile interface
 
 ---
 
-### 5. Social Button Color
-
-A colorful variation of the social button component.
-
-<p align="center">
-  <img src="./images/social_button_color.png" width="300">
-</p>
-
-**Source Code:**  
-[`SocialAction_Button.kt`](./SocialAction_Button.kt)
-
----
-
-### 6. Swipe Button
+### 5. Swipe Button
 
 An interactive swipe-to-complete button for actions that require user confirmation.
 
