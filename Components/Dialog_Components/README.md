@@ -6,7 +6,7 @@ Modern Dialog UI components built with Kotlin, Jetpack Compose, and Material 3.
 
 ### Confirmation Dialog
 
-![Confirmation Dialog](Components/Dialog_Components/images/confirm_dialog.png)
+![Confirmation Dialog](compose-ui-components-android/Components/Dialog_Components/images/confirm_dialog.png)
 
 ### Error Dialog
 
