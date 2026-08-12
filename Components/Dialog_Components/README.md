@@ -37,3 +37,4 @@ Modern Dialog UI components built with Kotlin, Jetpack Compose, and Material 3.
 ## YouTube Tutorial
 
 Watch the complete tutorial on YouTube.
+🎥 **[Watch the Complete Dialog Component Series](https://www.youtube.com/playlist?list=PLfTGzjVQsGbM)
