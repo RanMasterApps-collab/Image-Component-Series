@@ -1,8 +1,8 @@
 # TextField Components
 
-A collection of modern and reusable TextField components built with Jetpack Compose.
+A collection of modern and reusable **TextField UI components** built with **Kotlin and Jetpack Compose**.
 
-These components are designed for Android UI projects and can be easily customized and reused.
+These components are designed for Android applications and can be customized and reused in different projects.
 
 ---
 
@@ -10,17 +10,16 @@ These components are designed for Android UI projects and can be easily customiz
 
 ### 1. Animated Search UI
 
-A modern animated search interface with search states, recent searches, and result display.
+A modern animated search interface with recent searches, searching state, and search results.
 
-![Animated Search UI](./images/animated-search-ui-default.png)
+<p align="center">
+  <img src="./images/animated-search-ui-default.png" width="250">
+  <img src="./images/animated-search-ui-searching.png" width="250">
+  <img src="./images/animated-search-ui-results.png" width="250">
+</p>
 
-**Search Results:**
-
-![Animated Search UI Results](./images/animated-search-ui-results.png)
-
-**Searching State:**
-
-![Animated Search UI Searching](./images/animated-search-ui-searching.png)
+**Source Code:**  
+[`Animated_SearchBar.kt`](./Animated_SearchBar.kt)
 
 ---
 
@@ -28,58 +27,105 @@ A modern animated search interface with search states, recent searches, and resu
 
 A clean and reusable TextField designed for login screens.
 
-![Login TextField](./images/login-textfield.png)
+<p align="center">
+  <img src="./images/login-textfield.png" width="300">
+</p>
+
+**Source Code:**  
+[`Login_TextField.kt`](./Login_TextField.kt)
 
 ---
 
 ### 3. Material TextField
 
-A modern Material-style TextField component for Android applications.
+A modern Material TextField component designed with Jetpack Compose and Material 3.
 
-![Material TextField](./images/material_textfield.png)
+<p align="center">
+  <img src="./images/material-textfield.png" width="300">
+</p>
+
+**Source Code:**  
+[`Material_Textfield.kt`](./Material_Textfield.kt)
 
 ---
 
 ### 4. OTP Verification UI
 
-An OTP verification TextField UI designed for entering verification codes.
+A modern OTP verification interface for entering verification codes.
 
-![OTP Verification](./images/otp_verification.png)
+<p align="center">
+  <img src="./images/otp-verification.png" width="300">
+</p>
+
+**Source Code:**  
+[`OTP_VerificationUI.kt`](./OTP_VerificationUI.kt)
 
 ---
 
 ### 5. Search TextField
 
-A reusable search TextField for Android and Jetpack Compose applications.
+A reusable search TextField for Android applications.
 
-![Search TextField](./images/search_textfield.png)
+<p align="center">
+  <img src="./images/search-textfield.png" width="300">
+</p>
+
+**Source Code:**  
+[`Search_Bar_Textfield.kt`](./Search_Bar_Textfield.kt)
 
 ---
 
 ## Built With
 
-- Kotlin
-- Jetpack Compose
-- Material 3
-- Android
+- **Kotlin**
+- **Jetpack Compose**
+- **Material 3**
+- **Android**
+
+---
 
 ## Features
 
-- Modern UI
-- Reusable components
+- Modern TextField designs
+- Reusable Compose components
 - Smooth animations
-- Easy customization
-- Jetpack Compose based
+- Clean UI
 - Material 3 design
+- Easy customization
+- Beginner-friendly code
+- Ready to use in Android projects
 
-## Usage
+---
 
-Copy the required component into your Jetpack Compose project and customize the colors, typography, dimensions, and behavior according to your requirements.
+## How to Use
+
+1. Open the component you want to use.
+2. Copy the required Kotlin code.
+3. Add the required imports.
+4. Paste the component into your Compose project.
+5. Customize colors, typography, dimensions, and behavior as needed.
+
+---
+
+## Components Preview
+
+<p align="center">
+  <img src="./images/login-textfield.png" width="220">
+  <img src="./images/material-textfield.png" width="220">
+  <img src="./images/otp-verification.png" width="220">
+  <img src="./images/search-textfield.png" width="220">
+</p>
+
+---
 
 ## YouTube Tutorials
 
-Step-by-step tutorials for these components are available on my YouTube channel.
+Step-by-step tutorials for these Jetpack Compose components are available on my YouTube channel.
+
+The tutorials explain how to build each UI component from scratch using Kotlin and Jetpack Compose.
+
+---
 
 ## License
 
-You are free to use and modify these components for your own Android projects.
+You are free to use, modify, and integrate these components into your own Android projects.
