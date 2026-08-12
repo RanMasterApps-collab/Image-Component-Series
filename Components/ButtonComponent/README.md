@@ -13,7 +13,7 @@ These components are designed for modern Android applications and can be easily 
 A modern gradient-style button with an icon, designed for attractive Android interfaces.
 
 <p align="center">
-  <img src="./images/gradient_button.png" width="300">
+  <img src="./images/gradient_button.png" width="280">
 </p>
 
 **Source Code:**  
@@ -113,7 +113,7 @@ An interactive swipe-to-complete button for actions that require user confirmati
 ## Preview
 
 <p align="center">
-  <img src="./images/gradient_button.png" width="200">
+  <img src="./images/gradient_button.png" width="280">
   <img src="./images/material_button.png" width="200">
   <img src="./images/loading_button_load.png" width="200">
   <img src="./images/social_button.png" width="200">
