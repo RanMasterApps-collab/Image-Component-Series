@@ -16,11 +16,16 @@ Modern Dialog UI components built with Kotlin, Jetpack Compose, and Material 3.
 
 ![Success Dialog](./images/success_dialog.png)
 
+### Rating Dialog
+
+![Rating Dialog](./images/rate.png)
+
 ## Components
 
 - Confirmation Dialog
 - Error Dialog
 - Success Dialog
+- Rating Dialog
 
 ## Built With
 
@@ -33,7 +38,7 @@ Modern Dialog UI components built with Kotlin, Jetpack Compose, and Material 3.
 - [Confirmation Dialog](./Confirmation_Dialog.kt)
 - [Error Dialog](./Error_Dialog.kt)
 - [Success Dialog](./Success_Dialog.kt)
-
+- [Rating Dialog](./Rating_Dialog.kt)
 ## YouTube Tutorial
 
 Watch the complete tutorial on YouTube.
