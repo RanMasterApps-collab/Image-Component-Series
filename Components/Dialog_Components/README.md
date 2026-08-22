@@ -20,13 +20,17 @@ Modern Dialog UI components built with Kotlin, Jetpack Compose, and Material 3.
 
 ![Rating Dialog](./images/rate.png)
 
+### Delete Account Dialog
+
+![delete account Dialog](./images/delete_account_dialog.png)
+ 
 ## Components
 
 - Confirmation Dialog
 - Error Dialog
 - Success Dialog
 - Rating Dialog
-
+-Delete Account Dialog
 ## Built With
 
 - Kotlin
@@ -39,6 +43,7 @@ Modern Dialog UI components built with Kotlin, Jetpack Compose, and Material 3.
 - [Error Dialog](./Error_Dialog.kt)
 - [Success Dialog](./Success_Dialog.kt)
 - [Rating Dialog](./Rating_Dialog.kt)
+- [Delete Account Dialog](./Delete_Account_Dialog.kt)
 ## YouTube Tutorial
 
 Watch the complete tutorial on YouTube.
